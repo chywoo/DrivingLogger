@@ -2,62 +2,115 @@ import Foundation
 import CoreLocation
 import Combine
 
-// 위치 정보 관리를 위한 싱글톤 클래스
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     static let shared = LocationManager()
-    
-    private let locationManager = CLLocationManager()
-    
-    @Published var authorizationStatus: CLAuthorizationStatus
+
+    @Published var isDriving: Bool = false
     @Published var lastLocation: CLLocation?
     @Published var route: [CLLocationCoordinate2D] = []
-    @Published var totalDistance: CLLocationDistance = 0
+    @Published var totalDistance: CLLocationDistance = 0.0
+    @Published var currentAddress: String = "Fetching address..."
+    
+    // ⭐️ 1. ADD THIS LINE: This new property will publish the permission status.
+    @Published var authorizationStatus: CLAuthorizationStatus
+
+    private let locationManager = CLLocationManager()
+    private let geocoder = CLGeocoder()
 
     private override init() {
-        authorizationStatus = locationManager.authorizationStatus
+        // ⭐️ 2. INITIALIZE THE NEW PROPERTY
+        self.authorizationStatus = locationManager.authorizationStatus
         super.init()
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
-        locationManager.allowsBackgroundLocationUpdates = true // 백그라운드 위치 업데이트 허용
-        locationManager.pausesLocationUpdatesAutomatically = false // 자동으로 멈추지 않도록 설정
-        locationManager.activityType = .automotiveNavigation
-    }
-
-    func requestPermission() {
-        locationManager.requestAlwaysAuthorization()
+        setupLocationManager()
     }
     
-    func startUpdatingLocation() {
+    // ... (startDriving and stopDriving methods are unchanged) ...
+    func startDriving() {
+        guard !isDriving else { return }
         route.removeAll()
-        totalDistance = 0
+        totalDistance = 0.0
+        isDriving = true
         locationManager.startUpdatingLocation()
-    }
-    
-    func stopUpdatingLocation() {
-        locationManager.stopUpdatingLocation()
+        print("Starting trip tracking.")
     }
 
-    // CLLocationManagerDelegate 메서드
+    func stopDriving() {
+        guard isDriving else { return }
+        isDriving = false
+        locationManager.stopUpdatingLocation()
+        print("Stopped trip tracking. Total distance: \(totalDistance) meters")
+    }
+
+
+    // MARK: - CLLocationManagerDelegate Methods
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        authorizationStatus = manager.authorizationStatus
+        // ⭐️ 3. UPDATE THE PUBLISHED PROPERTY whenever the status changes.
+        self.authorizationStatus = manager.authorizationStatus
+        
+        // The rest of the logic remains the same
+        switch manager.authorizationStatus {
+        case .authorizedWhenInUse:
+            print("Location authorization: When In Use. Requesting Always authorization.")
+            manager.requestAlwaysAuthorization()
+        case .authorizedAlways:
+            print("Location authorization: Always.")
+        case .notDetermined:
+            print("Location authorization: Not Determined. Requesting When In Use authorization.")
+            manager.requestWhenInUseAuthorization()
+        case .restricted, .denied:
+            print("Location authorization: Denied or Restricted.")
+        @unknown default:
+            break
+        }
     }
     
+    // ... (The rest of the file is unchanged) ...
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let newLocation = locations.last else { return }
-        lastLocation = newLocation
-        
-        let coordinate = newLocation.coordinate
-        
-        // 경로에 새로운 좌표 추가 및 거리 계산
+        guard isDriving, let newLocation = locations.last else { return }
+
         if let lastCoordinate = route.last {
-            let lastLocationPoint = CLLocation(latitude: lastCoordinate.latitude, longitude: lastCoordinate.longitude)
-            totalDistance += newLocation.distance(from: lastLocationPoint)
+            let previousLocation = CLLocation(latitude: lastCoordinate.latitude, longitude: lastCoordinate.longitude)
+            totalDistance += newLocation.distance(from: previousLocation)
         }
-        
-        route.append(coordinate)
+        route.append(newLocation.coordinate)
+        self.lastLocation = newLocation
+        updateAddress(for: newLocation)
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("위치 정보를 가져오는데 실패했습니다: \(error.localizedDescription)")
+        print("Failed to get location: \(error.localizedDescription)")
+    }
+
+    private func setupLocationManager() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+        locationManager.distanceFilter = 10
+        locationManager.allowsBackgroundLocationUpdates = true
+        locationManager.showsBackgroundLocationIndicator = true
+    }
+    
+    private func updateAddress(for location: CLLocation) {
+        geocoder.reverseGeocodeLocation(location) { [weak self] placemarks, error in
+            guard let self = self else { return }
+            if let error = error {
+                print("Reverse geocoding failed: \(error.localizedDescription)")
+                self.currentAddress = "Address not found"
+                return
+            }
+            guard let placemark = placemarks?.first else {
+                self.currentAddress = "No address information"
+                return
+            }
+            let address = [
+                placemark.subThoroughfare,
+                placemark.thoroughfare,
+                placemark.locality
+            ].compactMap { $0 }.joined(separator: ", ")
+
+            DispatchQueue.main.async {
+                self.currentAddress = address.isEmpty ? "Resolving address..." : address
+            }
+        }
     }
 }
+

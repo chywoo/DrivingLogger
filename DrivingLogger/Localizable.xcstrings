@@ -34,6 +34,9 @@
     "App Info" : {
 
     },
+    "CURRENT ADDRESS" : {
+
+    },
     "Dashboard" : {
       "localizations" : {
         "en-US" : {
@@ -68,6 +71,9 @@
           }
         }
       }
+    },
+    "DISTANCE" : {
+
     },
     "Distance: %@ km" : {
 
@@ -120,6 +126,12 @@
     "iCloud Backup" : {
 
     },
+    "Location Access Denied" : {
+
+    },
+    "Ready to Drive?" : {
+
+    },
     "Settings" : {
       "localizations" : {
         "en-US" : {
@@ -168,7 +180,11 @@
         }
       }
     },
+    "To use trip tracking, please enable location services in Settings." : {
+
+    },
     "Today's Trip" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en-US" : {
           "stringUnit" : {
@@ -185,6 +201,7 @@
       }
     },
     "Tracking in Progress" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en-US" : {
           "stringUnit" : {
