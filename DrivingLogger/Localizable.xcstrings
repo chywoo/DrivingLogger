@@ -1,0 +1,240 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%@ km" : {
+
+    },
+    "%lldh %lldm" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lldh %2$lldm"
+          }
+        }
+      }
+    },
+    "Analytics" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "분석"
+          }
+        }
+      }
+    },
+    "App Info" : {
+
+    },
+    "Dashboard" : {
+      "localizations" : {
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "대시보드"
+          }
+        }
+      }
+    },
+    "Data Management" : {
+
+    },
+    "Distance" : {
+      "localizations" : {
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "거리"
+          }
+        }
+      }
+    },
+    "Distance: %@ km" : {
+
+    },
+    "Duration" : {
+      "localizations" : {
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "소요 시간"
+          }
+        }
+      }
+    },
+    "Duration: %lldh %lldm" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Duration: %1$lldh %2$lldm"
+          }
+        }
+      }
+    },
+    "Export Data" : {
+
+    },
+    "History" : {
+      "localizations" : {
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "기록"
+          }
+        }
+      }
+    },
+    "iCloud Backup" : {
+
+    },
+    "Settings" : {
+      "localizations" : {
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "설정"
+          }
+        }
+      }
+    },
+    "Start Driving" : {
+      "localizations" : {
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "운행 시작"
+          }
+        }
+      }
+    },
+    "Stop Driving" : {
+      "localizations" : {
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "운행 종료"
+          }
+        }
+      }
+    },
+    "Today's Trip" : {
+      "localizations" : {
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "오늘의 운행"
+          }
+        }
+      }
+    },
+    "Tracking in Progress" : {
+      "localizations" : {
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "실시간 운행 추적"
+          }
+        }
+      }
+    },
+    "Trip Detail" : {
+      "localizations" : {
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "상세 기록"
+          }
+        }
+      }
+    },
+    "Trip History" : {
+      "localizations" : {
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "운행 기록"
+          }
+        }
+      }
+    },
+    "Version" : {
+
+    }
+  },
+  "version" : "1.0"
+}
