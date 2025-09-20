@@ -8,7 +8,7 @@ class DashboardViewModel: ObservableObject {
     // ⭐️ We will now also observe the authorization status
     @Published var authorizationStatus: CLAuthorizationStatus
 
-    private var locationManager = LocationManager.shared
+    private var locationManager = LocationManager.getInstance()
     private var cancellables = Set<AnyCancellable>()
 
     init() {

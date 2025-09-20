@@ -3,7 +3,7 @@ import CoreLocation
 import Combine
 
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
-    static let shared = LocationManager()
+    static let instance = LocationManager()
 
     @Published var isDriving: Bool = false
     @Published var lastLocation: CLLocation?
@@ -22,6 +22,10 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         self.authorizationStatus = locationManager.authorizationStatus
         super.init()
         setupLocationManager()
+    }
+    
+    static func getInstance() -> LocationManager {
+        return LocationManager.instance
     }
     
     // ... (startDriving and stopDriving methods are unchanged) ...

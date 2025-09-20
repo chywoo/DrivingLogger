@@ -61,7 +61,7 @@ struct TrackingMapView: View {
     @State private var position: MapCameraPosition = .userLocation(fallback: .automatic)
     @State private var isTrackingUserLocation: Bool = true
     
-    init(viewModel: DashboardViewModel, locationManager: LocationManager = LocationManager.shared) {
+    init(viewModel: DashboardViewModel, locationManager: LocationManager = LocationManager.getInstance()) {
         self.viewModel = viewModel
         self.locationManager = locationManager
     }
@@ -135,7 +135,7 @@ struct TrackingMapView: View {
 
 #Preview {
     // ⭐️ 1. 새로운 인스턴스 생성 대신, .shared 싱글톤 인스턴스를 가져옵니다.
-    let mockLocationManager = LocationManager.shared
+    let mockLocationManager = LocationManager.instance
     
     // ⭐️ 2. 가져온 싱글톤 인스턴스에 Preview를 위한 가짜 데이터를 설정합니다.
     mockLocationManager.totalDistance = 12874.8 // Approx 8 miles
