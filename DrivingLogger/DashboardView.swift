@@ -11,6 +11,8 @@ struct DashboardView: View {
         } else {
             // Otherwise, show the start screen
             VStack(spacing: 20) {
+                Spacer()
+                
                 Text("Ready to Drive?")
                     .font(.largeTitle)
                     .fontWeight(.bold)
@@ -27,18 +29,18 @@ struct DashboardView: View {
                             .padding(.horizontal)
                     }
                 }
+                
+                Spacer()
 
                 Button(action: {
                     viewModel.toggleDrivingState()
                 }) {
-                    Text("Start Driving")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
+                    Image(systemName: "play.fill")
+                        .font(.title3)
                         .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.blue)
-                        .cornerRadius(15)
+                        .foregroundColor(Color.white)
+                        .background(Color.red)
+                        .clipShape(Circle())
                 }
                 .padding(.horizontal)
                 // ⭐️ Disable the button if permissions are not granted
