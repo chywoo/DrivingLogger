@@ -83,3 +83,42 @@ extension MKCoordinateRegion {
     }
 }
 
+import SwiftUI
+import SwiftData
+
+// MARK: - Xcode Preview
+
+// 1. 경로 데이터가 있는 완전한 운행 기록 Preview
+#Preview("Complete Trip") {
+    // Preview를 위한 가짜 Trip 객체 생성
+    let sampleTrip = Trip(
+        startDate: Date().addingTimeInterval(-3600), // 1시간 전 시작
+        endDate: Date().addingTimeInterval(-1820),   // 약 30분 운행
+        distance: 8530, // 약 5.3마일 (미터 단위)
+        route: [ // Apple Park 주변을 도는 가짜 경로
+            CLLocationCoordinate2D(latitude: 37.3348, longitude: -122.0090),
+            CLLocationCoordinate2D(latitude: 37.3323, longitude: -122.0113),
+            CLLocationCoordinate2D(latitude: 37.3304, longitude: -122.0097),
+            CLLocationCoordinate2D(latitude: 37.3328, longitude: -122.0069)
+        ]
+    )
+    
+    // Detail View는 보통 NavigationView 안에서 보이므로, 동일한 환경을 구성
+    return NavigationView {
+        TripDetailView(trip: sampleTrip)
+    }
+}
+
+// 2. 경로 데이터가 없는 운행 기록 Preview
+#Preview("Trip Without Route") {
+    let sampleTrip = Trip(
+        startDate: Date().addingTimeInterval(-86400), // 어제
+        endDate: Date().addingTimeInterval(-86000),
+        distance: 1200,
+        route: [] // 경로 데이터가 비어있는 경우
+    )
+    
+    return NavigationView {
+        TripDetailView(trip: sampleTrip)
+    }
+}

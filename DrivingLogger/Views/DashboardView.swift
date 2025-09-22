@@ -54,3 +54,35 @@ struct StartDrivingView: View {
     }
 }
 
+
+//import SwiftData
+import SwiftData // Preview에서 ModelContainer를 사용하기 위해 import
+
+
+// 1. 기본 상태 (위치 권한 허용) Preview
+#Preview("기본 (권한 허용됨)") {
+    // 각 Preview는 자신만의 독립적인 의존성을 설정합니다.
+    let config = ModelConfiguration(isStoredInMemoryOnly: true)
+    let container = try! ModelContainer(for: Trip.self, configurations: config)
+    let tripRepository = TripRepository(modelContext: container.mainContext)
+    let viewModel = DashboardViewModel(tripRepository: tripRepository)
+    
+    // 이 Preview를 위한 상태를 설정합니다.
+    LocationManager.shared.authorizationStatus = .authorizedAlways
+    
+    return DashboardView(viewModel: viewModel)
+}
+
+// 2. 위치 권한 거부 상태 Preview
+#Preview("위치 권한 거부됨") {
+    let config = ModelConfiguration(isStoredInMemoryOnly: true)
+    let container = try! ModelContainer(for: Trip.self, configurations: config)
+    let tripRepository = TripRepository(modelContext: container.mainContext)
+    let viewModel = DashboardViewModel(tripRepository: tripRepository)
+
+    // 이 Preview를 위한 상태를 설정합니다.
+    LocationManager.shared.authorizationStatus = .denied
+    
+    return DashboardView(viewModel: viewModel)
+}
+

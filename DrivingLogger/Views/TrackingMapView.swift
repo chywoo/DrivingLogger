@@ -130,3 +130,39 @@ struct StopButton: View {
     }
 }
 
+import SwiftData // Preview에서 ModelContainer를 사용하기 위해 import
+#Preview {
+    // --- Preview를 위한 의존성 설정 ---
+    
+    // 1. 실제 디스크가 아닌 메모리에서만 동작하는 임시 데이터베이스 컨테이너를 생성합니다.
+    let config = ModelConfiguration(isStoredInMemoryOnly: true)
+    let container = try! ModelContainer(for: Trip.self, configurations: config)
+    
+    // 2. 임시 데이터베이스를 사용하는 TripRepository를 생성합니다.
+    let tripRepository = TripRepository(modelContext: container.mainContext)
+    
+    // 3. 위에서 만든 Repository를 사용하여 DashboardViewModel의 인스턴스를 생성합니다.
+    let dashboardViewModel = DashboardViewModel(tripRepository: tripRepository)
+    
+    // 4. TrackingMapView가 사용하는 TrackingViewModel 인스턴스를 생성합니다.
+    let trackingViewModel = TrackingViewModel()
+    
+    // 5. (핵심) LocationManager의 싱글톤 인스턴스에 가짜 데이터를 직접 설정합니다.
+    //    TrackingViewModel은 이 싱글톤을 구독하므로, 이 데이터가 Preview에 표시됩니다.
+    let mockLocationManager = LocationManager.shared
+    mockLocationManager.totalDistance = 12874.8 // 약 8마일
+    mockLocationManager.currentAddress = "1 Apple Park Way, Cupertino"
+    mockLocationManager.route = [
+        CLLocationCoordinate2D(latitude: 37.3348, longitude: -122.0090),
+        CLLocationCoordinate2D(latitude: 37.3323, longitude: -122.0113),
+        CLLocationCoordinate2D(latitude: 37.3304, longitude: -122.0097)
+    ]
+
+    // --- View 렌더링 ---
+    
+    // 6. 모든 가짜 의존성이 준비되었으므로, TrackingMapView를 렌더링합니다.
+    return TrackingMapView(
+        dashboardViewModel: dashboardViewModel,
+        trackingViewModel: trackingViewModel
+    )
+}
