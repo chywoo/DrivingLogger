@@ -117,15 +117,12 @@ struct StopButton: View {
     
     var body: some View {
         Button(action: action) {
-            Text("Stop Driving")
-                .font(.title)
-                .fontWeight(.bold)
-                .foregroundColor(.white)
+            Image(systemName: "stop.fill")
+                .font(.title3)
                 .padding()
-                .frame(maxWidth: .infinity)
+                .foregroundColor(Color.white)
                 .background(Color.red)
-                .cornerRadius(15)
-                .padding([.horizontal, .bottom])
+                .clipShape(Circle())
         }
     }
 }

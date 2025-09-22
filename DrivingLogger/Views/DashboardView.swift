@@ -20,6 +20,8 @@ struct StartDrivingView: View {
     
     var body: some View {
         VStack(spacing: 20) {
+            Spacer()
+            
             Text("Ready to Drive?")
                 .font(.largeTitle)
                 .fontWeight(.bold)
@@ -35,18 +37,17 @@ struct StartDrivingView: View {
                         .padding(.horizontal)
                 }
             }
+            Spacer()
 
             Button(action: {
                 viewModel.toggleDrivingState()
             }) {
-                Text("Start Driving")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
+                Image(systemName: "play.fill")
+                    .font(.title3)
                     .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(Color.blue)
-                    .cornerRadius(15)
+                    .foregroundColor(Color.white)
+                    .background(Color.red)
+                    .clipShape(Circle())
             }
             .padding(.horizontal)
             .disabled(viewModel.authorizationStatus != .authorizedAlways && viewModel.authorizationStatus != .authorizedWhenInUse)
