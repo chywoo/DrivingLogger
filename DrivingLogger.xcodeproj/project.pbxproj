@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75552D4E2E7FA71700664605 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75552D4D2E7FA71700664605 /* MockData.swift */; };
 		75A34D6D2E7BA6E800D61E56 /* DrivingLoggerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A34D6C2E7BA6E800D61E56 /* DrivingLoggerApp.swift */; };
 		75A34D712E7BA6EB00D61E56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75A34D702E7BA6EB00D61E56 /* Assets.xcassets */; };
 		75A34D742E7BA6EB00D61E56 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75A34D732E7BA6EB00D61E56 /* Preview Assets.xcassets */; };
-		75A34D762E7BA6EB00D61E56 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A34D752E7BA6EB00D61E56 /* Persistence.swift */; };
 		75A34D792E7BA6EB00D61E56 /* DrivingLogger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 75A34D772E7BA6EB00D61E56 /* DrivingLogger.xcdatamodeld */; };
 		75A34D832E7BA6EC00D61E56 /* DrivingLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A34D822E7BA6EC00D61E56 /* DrivingLoggerTests.swift */; };
 		75A34D8D2E7BA6EC00D61E56 /* DrivingLoggerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A34D8C2E7BA6EC00D61E56 /* DrivingLoggerUITests.swift */; };
@@ -26,6 +26,9 @@
 		75A34DAE2E7BD5EE00D61E56 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A34DAD2E7BD5EE00D61E56 /* Trip.swift */; };
 		75A34DB02E7BD60500D61E56 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A34DAF2E7BD60500D61E56 /* SettingsView.swift */; };
 		75A34DB22E7BD62100D61E56 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A34DB12E7BD62100D61E56 /* SettingsViewModel.swift */; };
+		75CCBBDB2E80F49C009D1276 /* TripRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CCBBDA2E80F49C009D1276 /* TripRepository.swift */; };
+		75CCBBDD2E80F549009D1276 /* TrackingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CCBBDC2E80F549009D1276 /* TrackingViewModel.swift */; };
+		75CCBBDF2E80F56E009D1276 /* TripHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CCBBDE2E80F56E009D1276 /* TripHistoryViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,11 +49,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		75552D4D2E7FA71700664605 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		75A34D692E7BA6E800D61E56 /* DrivingLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrivingLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75A34D6C2E7BA6E800D61E56 /* DrivingLoggerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrivingLoggerApp.swift; sourceTree = "<group>"; };
 		75A34D702E7BA6EB00D61E56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75A34D732E7BA6EB00D61E56 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		75A34D752E7BA6EB00D61E56 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		75A34D782E7BA6EB00D61E56 /* DrivingLogger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DrivingLogger.xcdatamodel; sourceTree = "<group>"; };
 		75A34D7E2E7BA6EC00D61E56 /* DrivingLoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrivingLoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		75A34D822E7BA6EC00D61E56 /* DrivingLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrivingLoggerTests.swift; sourceTree = "<group>"; };
@@ -69,6 +72,9 @@
 		75A34DAF2E7BD60500D61E56 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		75A34DB12E7BD62100D61E56 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		75A34DB32E7BD76C00D61E56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		75CCBBDA2E80F49C009D1276 /* TripRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRepository.swift; sourceTree = "<group>"; };
+		75CCBBDC2E80F549009D1276 /* TrackingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingViewModel.swift; sourceTree = "<group>"; };
+		75CCBBDE2E80F56E009D1276 /* TripHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHistoryViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,23 +125,16 @@
 		75A34D6B2E7BA6E800D61E56 /* DrivingLogger */ = {
 			isa = PBXGroup;
 			children = (
+				75CCBBE32E80F7C7009D1276 /* Views */,
+				75CCBBE12E80F6D8009D1276 /* ViewModels */,
+				75CCBBE02E80F5E5009D1276 /* Foundation */,
+				75A34D702E7BA6EB00D61E56 /* Assets.xcassets */,
+				75A34D772E7BA6EB00D61E56 /* DrivingLogger.xcdatamodeld */,
+				75A34D6C2E7BA6E800D61E56 /* DrivingLoggerApp.swift */,
 				75A34DB32E7BD76C00D61E56 /* Info.plist */,
 				75A34DA92E7BD30400D61E56 /* Localizable.xcstrings */,
-				75A34D6C2E7BA6E800D61E56 /* DrivingLoggerApp.swift */,
-				75A34DB12E7BD62100D61E56 /* SettingsViewModel.swift */,
-				75A34DA12E7BB8C300D61E56 /* TrackingMapView.swift */,
-				75A34D9D2E7BB88300D61E56 /* DashboardView.swift */,
-				75A34D9F2E7BB89800D61E56 /* DashboardViewModel.swift */,
-				75A34DAF2E7BD60500D61E56 /* SettingsView.swift */,
-				75A34D702E7BA6EB00D61E56 /* Assets.xcassets */,
-				75A34D752E7BA6EB00D61E56 /* Persistence.swift */,
-				75A34D772E7BA6EB00D61E56 /* DrivingLogger.xcdatamodeld */,
+				75552D4D2E7FA71700664605 /* MockData.swift */,
 				75A34D722E7BA6EB00D61E56 /* Preview Content */,
-				75A34D9B2E7BB85100D61E56 /* MainTabView.swift */,
-				75A34DA52E7BB8ED00D61E56 /* TripDetailView.swift */,
-				75A34DA32E7BB8D500D61E56 /* TripHistoryView.swift */,
-				75A34DAB2E7BD5BC00D61E56 /* LocationManager.swift */,
-				75A34DAD2E7BD5EE00D61E56 /* Trip.swift */,
 			);
 			path = DrivingLogger;
 			sourceTree = "<group>";
@@ -163,6 +162,40 @@
 				75A34D8E2E7BA6EC00D61E56 /* DrivingLoggerUITestsLaunchTests.swift */,
 			);
 			path = DrivingLoggerUITests;
+			sourceTree = "<group>";
+		};
+		75CCBBE02E80F5E5009D1276 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				75A34DAD2E7BD5EE00D61E56 /* Trip.swift */,
+				75CCBBDA2E80F49C009D1276 /* TripRepository.swift */,
+				75A34DAB2E7BD5BC00D61E56 /* LocationManager.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		75CCBBE12E80F6D8009D1276 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				75A34DB12E7BD62100D61E56 /* SettingsViewModel.swift */,
+				75CCBBDC2E80F549009D1276 /* TrackingViewModel.swift */,
+				75A34D9F2E7BB89800D61E56 /* DashboardViewModel.swift */,
+				75CCBBDE2E80F56E009D1276 /* TripHistoryViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		75CCBBE32E80F7C7009D1276 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				75A34DAF2E7BD60500D61E56 /* SettingsView.swift */,
+				75A34DA52E7BB8ED00D61E56 /* TripDetailView.swift */,
+				75A34DA32E7BB8D500D61E56 /* TripHistoryView.swift */,
+				75A34DA12E7BB8C300D61E56 /* TrackingMapView.swift */,
+				75A34D9B2E7BB85100D61E56 /* MainTabView.swift */,
+				75A34D9D2E7BB88300D61E56 /* DashboardView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,15 +333,18 @@
 			files = (
 				75A34DAE2E7BD5EE00D61E56 /* Trip.swift in Sources */,
 				75A34DA62E7BB8ED00D61E56 /* TripDetailView.swift in Sources */,
-				75A34D762E7BA6EB00D61E56 /* Persistence.swift in Sources */,
+				75CCBBDF2E80F56E009D1276 /* TripHistoryViewModel.swift in Sources */,
 				75A34DAC2E7BD5BC00D61E56 /* LocationManager.swift in Sources */,
 				75A34D9E2E7BB88300D61E56 /* DashboardView.swift in Sources */,
+				75CCBBDD2E80F549009D1276 /* TrackingViewModel.swift in Sources */,
+				75CCBBDB2E80F49C009D1276 /* TripRepository.swift in Sources */,
 				75A34D792E7BA6EB00D61E56 /* DrivingLogger.xcdatamodeld in Sources */,
 				75A34DA42E7BB8D500D61E56 /* TripHistoryView.swift in Sources */,
 				75A34DA22E7BB8C300D61E56 /* TrackingMapView.swift in Sources */,
 				75A34DB22E7BD62100D61E56 /* SettingsViewModel.swift in Sources */,
 				75A34D6D2E7BA6E800D61E56 /* DrivingLoggerApp.swift in Sources */,
 				75A34DB02E7BD60500D61E56 /* SettingsView.swift in Sources */,
+				75552D4E2E7FA71700664605 /* MockData.swift in Sources */,
 				75A34D9C2E7BB85100D61E56 /* MainTabView.swift in Sources */,
 				75A34DA02E7BB89800D61E56 /* DashboardViewModel.swift in Sources */,
 			);

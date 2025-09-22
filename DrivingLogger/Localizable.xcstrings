@@ -1,18 +1,8 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "%@ km" : {
+    "—" : {
 
-    },
-    "%lldh %lldm" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$lldh %2$lldm"
-          }
-        }
-      }
     },
     "Analytics" : {
       "extractionState" : "stale",
@@ -32,9 +22,6 @@
       }
     },
     "App Info" : {
-
-    },
-    "CURRENT ADDRESS" : {
 
     },
     "Dashboard" : {
@@ -57,6 +44,7 @@
 
     },
     "Distance" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en-US" : {
           "stringUnit" : {
@@ -72,13 +60,8 @@
         }
       }
     },
-    "DISTANCE" : {
-
-    },
-    "Distance: %@ km" : {
-
-    },
     "Duration" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en-US" : {
           "stringUnit" : {
@@ -90,16 +73,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "소요 시간"
-          }
-        }
-      }
-    },
-    "Duration: %lldh %lldm" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Duration: %1$lldh %2$lldm"
           }
         }
       }
@@ -218,6 +191,7 @@
       }
     },
     "Trip Detail" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en-US" : {
           "stringUnit" : {
@@ -232,6 +206,9 @@
           }
         }
       }
+    },
+    "Trip Details" : {
+
     },
     "Trip History" : {
       "localizations" : {
@@ -249,7 +226,13 @@
         }
       }
     },
+    "Trip on %@" : {
+
+    },
     "Version" : {
+
+    },
+    "지점" : {
 
     }
   },

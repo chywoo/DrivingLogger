@@ -1,14 +1,17 @@
 import SwiftUI
 
 struct MainTabView: View {
+    @ObservedObject var dashboardViewModel: DashboardViewModel
+    let tripRepository: TripRepository
+    
     var body: some View {
         TabView {
-            DashboardView()
+            DashboardView(viewModel: dashboardViewModel)
                 .tabItem {
                     Label("Dashboard", systemImage: "car.fill")
                 }
 
-            TripHistoryView()
+            TripHistoryView(viewModel: TripHistoryViewModel(tripRepository: tripRepository))
                 .tabItem {
                     Label("History", systemImage: "list.bullet")
                 }
@@ -21,6 +24,3 @@ struct MainTabView: View {
     }
 }
 
-#Preview {
-    MainTabView()
-}
