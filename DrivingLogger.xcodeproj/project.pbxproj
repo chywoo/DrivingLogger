@@ -29,6 +29,9 @@
 		75CCBBDB2E80F49C009D1276 /* TripRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CCBBDA2E80F49C009D1276 /* TripRepository.swift */; };
 		75CCBBDD2E80F549009D1276 /* TrackingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CCBBDC2E80F549009D1276 /* TrackingViewModel.swift */; };
 		75CCBBDF2E80F56E009D1276 /* TripHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CCBBDE2E80F56E009D1276 /* TripHistoryViewModel.swift */; };
+		75CCBBE52E811044009D1276 /* TripRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CCBBE42E811044009D1276 /* TripRepositoryTests.swift */; };
+		75CCBBE72E81107F009D1276 /* MockTripRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CCBBE62E81107F009D1276 /* MockTripRepository.swift */; };
+		75CCBBE92E811091009D1276 /* DashboardViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CCBBE82E811091009D1276 /* DashboardViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +78,9 @@
 		75CCBBDA2E80F49C009D1276 /* TripRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRepository.swift; sourceTree = "<group>"; };
 		75CCBBDC2E80F549009D1276 /* TrackingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingViewModel.swift; sourceTree = "<group>"; };
 		75CCBBDE2E80F56E009D1276 /* TripHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHistoryViewModel.swift; sourceTree = "<group>"; };
+		75CCBBE42E811044009D1276 /* TripRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRepositoryTests.swift; sourceTree = "<group>"; };
+		75CCBBE62E81107F009D1276 /* MockTripRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTripRepository.swift; sourceTree = "<group>"; };
+		75CCBBE82E811091009D1276 /* DashboardViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +157,9 @@
 			isa = PBXGroup;
 			children = (
 				75A34D822E7BA6EC00D61E56 /* DrivingLoggerTests.swift */,
+				75CCBBE42E811044009D1276 /* TripRepositoryTests.swift */,
+				75CCBBE62E81107F009D1276 /* MockTripRepository.swift */,
+				75CCBBE82E811091009D1276 /* DashboardViewModelTests.swift */,
 			);
 			path = DrivingLoggerTests;
 			sourceTree = "<group>";
@@ -354,7 +363,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75CCBBE52E811044009D1276 /* TripRepositoryTests.swift in Sources */,
+				75CCBBE72E81107F009D1276 /* MockTripRepository.swift in Sources */,
 				75A34D832E7BA6EC00D61E56 /* DrivingLoggerTests.swift in Sources */,
+				75CCBBE92E811091009D1276 /* DashboardViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
